@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Vue 3 Basics</title>
+        <style>
+            .mountingHere {
+                display: flex;
+                flex-direction: column;
+            }
+            .box {
+                background-color: orangered;
+                height: 200px;
+                width: 200px;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+            }
+            [v-cloak]{
+                display:none;
+            }
+        </style>
+    </head>
+    <body>
+        <div id="mountingHere" v-cloak >
+            <h2>{{ greeting }}</h2>
+            <input @keyup.enter="greet('Vue')" v-model="greeting" type="text">
+            <button @click="toggleBox">Toggle Box</button>
+            <button @click= "count++">CountUp</button>
+            <button v-if= "count>0" @click= "count--" >CountDown</button>
+            <h2>{{count}}</h2>
+            <test-box v-if="isVisible" />
+        </div>
+        <script src="https://unpkg.com/vue@next"></script>
+        <script>
+            let app = Vue.createApp({
+                data: function() {
+                    return {
+                        greeting: "VueJS application",
+                        isVisible: false,
+                        count:0
+                    }
+                },
+                methods: {
+                    toggleBox: function() {
+                        this.isVisible = !this.isVisible
+                    },
+                    greet (word) {
+                        console.log(`hello from the console ${word}`)
+                    }
+                },
+                updated() {
+                    console.log('updated')
+                }
+            })
+
+            app.component('test-box', {
+                template: `
+                    <div class="box">
+                        <h1>box</h1>
+                    </div>
+                `,
+                created() {
+                    console.log('created')
+                },
+                mounted() {
+                    console.log('mounted')
+                },
+                unmounted() {
+                    console.log('unmounted')
+                }
+            })
+            app.mount('#mountingHere')
+        </script>
+    </body>
+</html>
