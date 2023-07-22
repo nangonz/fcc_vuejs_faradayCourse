@@ -10,3 +10,12 @@ You can see the different stages of development by checking out the other branch
 
 Special thanks to [TheJaredWilcurt](https://github.com/TheJaredWilcurt) for helping out with the initial  
 static code and doing pretty much all of the styling.
+
+<hr>
+
+![preview00](./public/yummiFood.png)
+
+<br>
+
+![preview00](./public/yummiFoodVue3.png)
+
