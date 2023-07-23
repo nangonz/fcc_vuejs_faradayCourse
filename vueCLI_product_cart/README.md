@@ -85,16 +85,22 @@ we have three scripts here by default. It gives us our main two commands for the
 		handle replacing this router Vue tag with whatever component we tell it to in our routes file. So router-view is  
 		just a temporary placeholder for whatever we put on the page.
 
-	- `assets`
+	- `assets`: assets, of course, are a place for usually CSS images, anything like that to live.
 	- `components`: in front end applications, files are usually split up between Vues, or pages. So basically, anything  
 		in viewa folder will be connected to the router. So they will have their own routes, there'll be their own pages.  
 		Anything in the components folder are things that are imported into other components. They're meant to be parts of  
 		pages or reusable components that you use throughout your application. Basically, anything in the Vues folder is  
 		connected to the router.
-	- `router`
+	- `router` 
 	- `views`
+
+Sometimes you will see other folders created here in Vue projects but these are the basic ones. The only one that we  
+are going to add later is the store folder.
 
 ### Vue Router
 Because we chose to install a router as well, it installed the default Vue router, which is also called Vue router.  
 And you can see I can go to different page routes. Now this isn't the same as our last application, because there's  
 no page refresh in between page routes. These are not HTML links. This is just a JavaScript router, rendering hiding or showing different pages of this application.
+
+Now, you don't have to worry about code splitting, and lazy loading and all of that other stuff. Those are more  
+advanced routing concepts.
