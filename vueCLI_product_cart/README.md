@@ -86,6 +86,15 @@ we have three scripts here by default. It gives us our main two commands for the
 		just a temporary placeholder for whatever we put on the page.
 
 	- `assets`: assets, of course, are a place for usually CSS images, anything like that to live.
+		In any Vue component, you can add styles directly inside of that component in `<style>`. And you'll notice this is  
+		just plain CSS here that you can write inside of these Vue files. by default, the style tag globally affects anything in the application. Now, this is generally not good practice, because if you want to globally change a  
+		style, you should put that in a separate style sheet. What you have to do is only let it affect the app dot Vue  
+		file, so it won't change styles in any other component, it will only affect whatever is in my template in this  
+		file. And that's why I use the scope keyword here.  
+
+		Now, if I wanted to add an external stylesheet instead of importing this into one of my HTML files, what Vue does  
+		is allow me to import it directly into my JavaScript in main.js.
+
 	- `components`: in front end applications, files are usually split up between Vues, or pages. So basically, anything  
 		in viewa folder will be connected to the router. So they will have their own routes, there'll be their own pages.  
 		Anything in the components folder are things that are imported into other components. They're meant to be parts of  
