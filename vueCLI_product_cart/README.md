@@ -116,3 +116,11 @@ no page refresh in between page routes. These are not HTML links. This is just a
 
 Now, you don't have to worry about code splitting, and lazy loading and all of that other stuff. Those are more  
 advanced routing concepts.
+
+### Vuex (state management)
+In simple applications data sharing works pretty well, we can keep all of our variables in a parent component so in  
+this case, in our app dot Vue component, we pass functions and variables down to children and then children can call  
+functions, like add to cart that will then update the state of the parent component.
+
+Now in more complicated applications, we would need something a little bit more robust for state management, and being  
+able to share all of this data throughout our application and we will talk about that in a future series where we cover Vue x, which is Vuejs default state management library. But for right now, we are going to leave the application as it is and work on it in future series and lessons.
