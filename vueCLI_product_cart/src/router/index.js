@@ -16,7 +16,7 @@ const routes = [
   },
   {
     path: '/past-orders',
-    name: 'Past-orders',
+    name: 'PastOrders',
     component: PastOrders
   }
 ]
