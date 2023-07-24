@@ -23,7 +23,7 @@
         </thead>
         <tbody>
           <tr v-for="(quantity, key, i) in cart" :key="i" >
-            <td><i class="icofont-carrot icofont-3x"></i></td>
+            <td><i :class="`icofont-${key} icofont-3x`"></i></td>
             <td>{{ key }}</td>
             <td>${{ getPrice(key) }}</td>
             <td class="center">{{ quantity }}</td>
@@ -53,7 +53,7 @@ export default {
   props: ['toggle', 'cart', 'inventory', 'remove'],
   methods: {
     getPrice (name) {
-      const product = this.inventory.find((p) => p.name === name)
+      const product = this.inventory.find((p) => p.icon === name)
       return product.price.USD
     },
 
