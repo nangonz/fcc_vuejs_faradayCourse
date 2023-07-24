@@ -6,7 +6,8 @@
 @import '_mixins.sass';
 
 /* ITCSS: Resets */
-@import '../../node_modules/normalize.css/normalize';
+@import '../../../node_modules/normalize.css';
+// vueCLI_product_cart\node_modules\normalize.css
 
 /* ITCSS: Fonts */
 @import '_modak.scss';

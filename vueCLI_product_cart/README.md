@@ -93,7 +93,10 @@ we have three scripts here by default. It gives us our main two commands for the
 		file. And that's why I use the scope keyword here.  
 
 		Now, if I wanted to add an external stylesheet instead of importing this into one of my HTML files, what Vue does  
-		is allow me to import it directly into my JavaScript in main.js.
+		is allow me to import it directly into my JavaScript in main.js. Also how do I get these into my project if they  
+		aren't standard CSS files. There is one file called style dot SCSS, which is a sass file and this imports all of  
+		the rest of the files here, all of my other sass files. Now it is this file that I really want to import into my  
+		project to get all of my styles.
 
 	- `components`: in front end applications, files are usually split up between Vues, or pages. So basically, anything  
 		in viewa folder will be connected to the router. So they will have their own routes, there'll be their own pages.  
