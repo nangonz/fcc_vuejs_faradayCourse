@@ -99,9 +99,6 @@ export default {
   name: 'Home',
   props: ['inventory'],
   data () {
-    return {
-      inventory: food
-    }
   },
   components: {
   }

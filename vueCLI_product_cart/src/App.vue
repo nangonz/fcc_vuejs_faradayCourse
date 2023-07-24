@@ -12,16 +12,16 @@
           <span>Past Orders</span>
         </router-link>
       </nav>
-      <a @click="toggleSidebar" href="#" class="top-bar-cart-link">
+      <div @click="toggleSidebar" class="top-bar-cart-link">
         <i class="icofont-cart-alt icofont-1x"></i>
         <span>Cart items ({{ totalQuantity }})</span>
-      </a>
+      </div>
     </header>
   <router-view :inventory="inventory" />
 
-  <Sidebar 
-    v-if="showSidebar" 
-    :toggle="toggleSidebar" 
+  <Sidebar
+    v-if="showSidebar"
+    :toggle="toggleSidebar"
     :cart="cart"
     :inventory="inventory"
     :remove="removeItem"
@@ -31,7 +31,7 @@
 
 <script>
 import food from './food.json'
-import Sidebar from './components/Sidebar.vue';
+import Sidebar from './components/Sidebar.vue'
 
 export default {
   components: {
@@ -44,20 +44,20 @@ export default {
       cart: {}
     }
   },
-  computed:{
-    totalQuantity() {
-        return Object.values(this.cart).reduce((acc, curr)=>{
-          return acc + curr
-        }, 0)
-      }
+  computed: {
+    totalQuantity () {
+      return Object.values(this.cart).reduce((acc, curr) => {
+        return acc + curr
+      }, 0)
+    }
   },
   methods: {
 
     addToCart (name, index) {
-      if(this.inventory[index].quantity <= 0 ) {
-          alert('Not valid quantity')
+      if (this.inventory[index].quantity <= 0) {
+        alert('Not valid quantity')
       }
-      if(!this.cart[name]) this.cart[name] = 0
+      if (!this.cart[name]) this.cart[name] = 0
       this.cart[name] += this.inventory[index].quantity
       this.inventory[index].quantity = 0
       this.showSidebar = true
