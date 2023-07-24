@@ -53,13 +53,9 @@ export default {
   },
   methods: {
 
-    addToCart (name, index) {
-      if (this.inventory[index].quantity <= 0) {
-        alert('Not valid quantity')
-      }
+    addToCart (name, quantity) {
       if (!this.cart[name]) this.cart[name] = 0
-      this.cart[name] += this.inventory[index].quantity
-      this.inventory[index].quantity = 0
+      this.cart[name] += quantity
       this.showSidebar = true
       console.log(this.cart)
     },
