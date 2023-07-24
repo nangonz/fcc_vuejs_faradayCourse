@@ -12,33 +12,56 @@
           <span>Past Orders</span>
         </router-link>
       </nav>
-      <!-- <a @click="toggleSidebar" href="#" class="top-bar-cart-link">
+      <a @click="toggleSidebar" href="#" class="top-bar-cart-link">
         <i class="icofont-cart-alt icofont-1x"></i>
         <span>Cart items ({{ totalQuantity }})</span>
-      </a> -->
+      </a>
     </header>
-  <router-view/>
+  <router-view :inventory="inventory" />
+  <Sidebar 
+    v-if="showSidebar" 
+    :toggle="toggleSidebar" 
+    :cart="cart"
+    :inventory="inventory"
+    :remove="removeItem"
+  />
 </template>
 
-<style>
-#app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-}
+<script>
+import food from './food.json'
+import Sidebar from './components/Sidebar.vue';
 
-#nav {
-  padding: 30px;
-}
+export default {
+  components: {
+    Sidebar
+  },
+  data () {
+    return {
+      showSidebar: false,
+      inventory: food,
+      cart: {}
+    }
+  },
+  methods: {
+    
+    addToCart (name, index) {
+      if(this.inventory[index].quantity <= 0 ) {
+          alert('Not valid quantity')
+      }
+      if(!this.cart[name]) this.cart[name] = 0
+      this.cart[name] += this.inventory[index].quantity
+      this.inventory[index].quantity = 0
+      this.showSidebar = true
+      console.log(this.cart)
+    },
 
-#nav a {
-  font-weight: bold;
-  color: #2c3e50;
-}
+    toggleSidebar () {
+      this.showSidebar = !this.showSidebar
+    },
 
-#nav a.router-link-exact-active {
-  color: #42b983;
+    removeItem (name) {
+      delete this.cart[name]
+    }
+  }
 }
-</style>
+</script>

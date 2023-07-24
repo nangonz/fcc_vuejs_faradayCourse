@@ -1,6 +1,5 @@
 <template>
   <div class="home">
-    <h1>Home</h1>
     <div class="splash-container">
         <div class="splash">
           <h1>yummi</h1>
@@ -98,6 +97,12 @@
 
 export default {
   name: 'Home',
+  props: ['inventory'],
+  data () {
+    return {
+      inventory: food
+    }
+  },
   components: {
   }
 }
