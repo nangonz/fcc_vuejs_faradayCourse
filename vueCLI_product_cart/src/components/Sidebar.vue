@@ -47,3 +47,9 @@
   </div>
 </aside>
 </template>
+
+<script>
+  export default {
+    props: ['showSidebar', 'toogle', 'cart', 'inventory', 'remove']
+  }
+</script>

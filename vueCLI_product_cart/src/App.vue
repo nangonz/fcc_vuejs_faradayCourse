@@ -18,6 +18,7 @@
       </a>
     </header>
   <router-view :inventory="inventory" />
+
   <Sidebar 
     v-if="showSidebar" 
     :toggle="toggleSidebar" 
@@ -25,6 +26,7 @@
     :inventory="inventory"
     :remove="removeItem"
   />
+
 </template>
 
 <script>
@@ -42,8 +44,15 @@ export default {
       cart: {}
     }
   },
+  computed:{
+    totalQuantity() {
+        return Object.values(this.cart).reduce((acc, curr)=>{
+          return acc + curr
+        }, 0)
+      }
+  },
   methods: {
-    
+
     addToCart (name, index) {
       if(this.inventory[index].quantity <= 0 ) {
           alert('Not valid quantity')
