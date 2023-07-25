@@ -41,7 +41,7 @@
       <br>
       <div class="spread">
         <span><strong>Total:</strong>${{calculateTotal()}}</span>
-        <button class="btn btn-light">Checkout</button>
+        <button @click="checkout(cart)" class="btn btn-light">Checkout</button>
       </div>
     </div>
   </div>
@@ -50,7 +50,7 @@
 
 <script>
 export default {
-  props: ['toggle', 'cart', 'inventory', 'remove'],
+  props: ['toggle', 'cart', 'inventory', 'remove', 'checkout'],
   methods: {
     getPrice (name) {
       const product = this.inventory.find((p) => p.icon === name)

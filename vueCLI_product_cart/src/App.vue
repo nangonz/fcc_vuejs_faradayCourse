@@ -17,7 +17,7 @@
         <span>Cart items ({{ totalQuantity }})</span>
       </div>
     </header>
-  <router-view :inventory="inventory" :addToCart="addToCart" />
+  <router-view :inventory="inventory" :addToCart="addToCart" :checkout="checkout" :pastOrders="pastOrders"/>
 
   <Sidebar
     v-if="showSidebar"
@@ -25,6 +25,7 @@
     :cart="cart"
     :inventory="inventory"
     :remove="removeItem"
+    :checkout="checkout"
   />
 
 </template>
@@ -41,7 +42,8 @@ export default {
     return {
       showSidebar: false,
       inventory: food,
-      cart: {}
+      cart: {},
+      pastOrders: {}
     }
   },
   computed: {
@@ -66,6 +68,10 @@ export default {
 
     removeItem (name) {
       delete this.cart[name]
+    },
+    checkout (order) {
+      alert('thanks for visiting Yummi')
+      this.pastOrders = order
     }
   }
 }
