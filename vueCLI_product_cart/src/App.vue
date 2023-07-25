@@ -72,6 +72,7 @@ export default {
     checkout (order) {
       alert('thanks for visiting Yummi')
       this.pastOrders = order
+      this.cart = {}
     }
   }
 }
