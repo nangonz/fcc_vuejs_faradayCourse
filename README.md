@@ -5,7 +5,7 @@
 ![VueProject](vueCLI_product_cart/src/assets/images/yummiFood.png)
 
 Gwendolyn Faraday developed this course. She previously created one of the most popular Vue courses on the entire  
-internet and now she's back with this updated course. In the course, you can learn the fundamentals of VUE and apply  
+internet and now she's back with this updated course. In the course, you can learn the fundamentals of VUE and apply
 what you learn to build an e-commerce website.
 
 ### Here are the sections in this course:
